@@ -1,0 +1,29 @@
+// AUTHOR - MANTHAN
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+
+int main(){
+   ll n;
+   cin >> n;
+   if( n == 2 || n == 3 ){
+       cout << "NO SOLUTION" ;
+   }
+   else{
+       vector< ll > ans;
+       ll k = 2;
+       while( k <= n ){
+            ans.push_back(k); k+=2;
+       }
+       k = 1;
+       while( k <= n ){
+            ans.push_back(k); k+=2;
+       }
+       for( auto z : ans ){
+           cout << z << " ";
+       }
+   }
+   cout << endl;
+}
