@@ -1,0 +1,22 @@
+// AUTHOR - MANTHAN
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+
+int main(){
+    string str;
+    cin >> str;
+    ll n = str.size()-1 , k = 1 , maxo = 1;
+    for( ll i = 0 ; i < n ; i++ ){
+        if( str[i] == str[i+1] ){
+            k++;
+            maxo = max( maxo , k );
+        }
+        else{
+            k = 1;
+        }
+    }
+    cout << maxo << endl;
+}
