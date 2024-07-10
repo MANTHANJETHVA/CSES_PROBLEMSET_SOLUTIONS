@@ -22,7 +22,7 @@ int main(){
         ll l = 0;
         ll r = k-1;
         while( l < r ){
-            if( v[l].first + v[r].first == tar ){
+            if( v[l].first + v[r].first == tar && l != i && r != i ){
                 cout << v[l].second << " " << v[r].second << " " << v[i].second << endl;
                 return 0;
             }
