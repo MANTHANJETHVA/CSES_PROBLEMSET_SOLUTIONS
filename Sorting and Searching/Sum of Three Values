@@ -1,0 +1,38 @@
+// AUTHOR - MANTHAN
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+
+int main(){
+    ll n,x;
+    cin >> n >> x;
+    vector< pair<ll,ll> > v;
+    for( ll i = 0 ; i < n ; i++ ){
+        ll a; cin >> a;
+        if( a < x ){
+            v.push_back(make_pair( a , i+1 ));
+        }
+    }
+    sort( v.begin() , v.end() );
+    ll k = v.size();
+    for( ll i = 0 ; i < k ; i++ ){
+        ll tar = x - v[i].first;
+        ll l = 0;
+        ll r = k-1;
+        while( l < r ){
+            if( v[l].first + v[r].first == tar ){
+                cout << v[l].second << " " << v[r].second << " " << v[i].second << endl;
+                return 0;
+            }
+            else if( v[l].first + v[r].first <= tar ){
+                l++;
+            }
+            else{
+                r--;
+            }
+        }
+    }
+    cout << "IMPOSSIBLE" << endl;
+}
